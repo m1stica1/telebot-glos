@@ -1,5 +1,5 @@
-import telebot
-from telebot import types
+import telebot # type: ignore
+from telebot import types # type: ignore
 
 bot = telebot.TeleBot('7114509067:AAGzqBnNnquqc48A1euTEQzl3zaLGzVwu5M')
 
