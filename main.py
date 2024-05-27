@@ -43,12 +43,13 @@ def handle_inline_button_click(call):
         button20 = types.InlineKeyboardButton("ВЛАГОСТОЙКОСТЬ (WATERRESSISTANCE)", callback_data='button20')
         button21 = types.InlineKeyboardButton("NATURAL DYE", callback_data='button21')
         button22 = types.InlineKeyboardButton("Ткань French Terry", callback_data='button22')
+        button57 = types.InlineKeyboardButton("thermore ecodown", callback_data='button57')
 
-        inline_keyboard.add(button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22)
+        inline_keyboard.add(button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22, button57)
         # Отправляем сообщение с дополнительной клавиатурой
         bot.send_message(call.message.chat.id, "Выберите технологию:", reply_markup=inline_keyboard)
 
-    elif call.data in ['button3', 'button4', 'button5', 'button6', 'button7', 'button8', 'button9', 'button10', 'button11', 'button12', 'button13', 'button14', 'button15', 'button16', 'button17', 'button18', 'button19', 'button20', 'button21', 'button22']:
+    elif call.data in ['button3', 'button4', 'button5', 'button6', 'button7', 'button8', 'button9', 'button10', 'button11', 'button12', 'button13', 'button14', 'button15', 'button16', 'button17', 'button18', 'button19', 'button20', 'button21', 'button22', 'button23', 'button57']:
         text = {
             'button3': "ActivChill - плетение нитей в форме пятиугольника – одежда «дышит», пропуская потоки воздуха и способствуя лучшей вентиляции, что позволяет тренироваться намного интенсивнее и дольше",
             'button4': "ACTIVCHILL+DREAMBLEND -  смешение между собой охлаждающий эффект с «плюшевым» комфортом из линейки премиального хлопка DREAMBLEND COTTON.",
@@ -70,6 +71,7 @@ def handle_inline_button_click(call):
             'button20': "ВЛАГОСТОЙКОСТЬ (WATERRESSISTANCE) – это свойство ткани не намокать и не пропускать воду. достигается благодаря нанесению на материал полимерного покрытия или за счет соединения материала с мембраной.",
             'button21': "NATURAL DYE- выполнены из экологичного хлопка с применением натуральных минеральных красителей, чтобы снизить негативный эффект от производства на окружающую среду.",
             'button22': "Ткань French Terry — это высокопористый вид трикотажа, обладающий мягкой воздушной структурой. Она отличается особым способом плетения и подходит для производства толстовок, худи, джемперов, брюк, одежды для младенцев, футболок, платьев и юбок",
+            'button57': "thermore ecodown - инновационное теплоизоляционное волокно, полученное в результате переработки пластиковых бутылок. каждая куртка с подобным утеплителем – это более десяти таких бутылок, которым, дана новая жизнь .свойства: • материал сохраняет до 98% выделенного телом тепла за счет «воздушной камеры», образованной низкоплотной структурой утеплителя, заполненной молекулами воздуха. по схожему принципу работают натуральные пуховые утеплители • обладает терморегуляцией. как только температура под одеждой начинает подниматься, искусственные волокна изменяют форму, выпуская скопившиеся молекулы воздуха. таким образом лишнее тепло выходит наружу, а под слоем верхней одежды сохраняется комфортная температура • наполнитель не комкается после стирки, не мигрирует и не уменьшается в обьеме. волокна не вылезают наружу, как это происходит с пухом",
         }
 
         # Отвечаем на нажатие кнопки
@@ -160,8 +162,6 @@ def handle_inline_button_click(call):
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
     bot.reply_to(message, message.text)
-
-
 
 
 bot.polling(none_stop=True)
